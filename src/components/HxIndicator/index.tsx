@@ -9,7 +9,7 @@ interface IProps {
   loadingMsg?: string;
 }
 
-const HxException = memo((props: IProps) => {
+const HxIndicator = memo((props: IProps) => {
   const { loadingMsg = '加载中...' } = props;
 
   const renderContent = (
@@ -24,4 +24,4 @@ const HxException = memo((props: IProps) => {
   return renderContent;
 });
 
-export default HxException;
+export default HxIndicator;
