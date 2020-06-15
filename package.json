@@ -1,0 +1,52 @@
+{
+  "name": "physical-exam-h5",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "cross-env PORT=8800 umi dev",
+    "start:dev": "cross-env PORT=8801 UMI_ENV=dev umi dev",
+    "start:staging": "cross-env PORT=8802 UMI_ENV=staging umi dev",
+    "start:prod": "cross-env PORT=8803 UMI_ENV=prod umi dev",
+    "build": "umi build",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "test": "umi-test",
+    "test:coverage": "umi-test --coverage",
+    "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx --format=pretty ./src",
+    "commit": "yarn lint && yarn prettier"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,jsx,less,md,json}": [
+      "prettier --write"
+    ],
+    "*.ts?(x)": [
+      "prettier --parser=typescript --write"
+    ]
+  },
+  "config": {},
+  "dependencies": {
+    "@umijs/preset-react": "1.x",
+    "@umijs/test": "^3.1.1",
+    "antd-mobile": "^2.3.1",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "umi": "^3.1.1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.3.5",
+    "@commitlint/config-conventional": "^8.3.4",
+    "@umijs/fabric": "^2.0.8",
+    "commitizen": "^4.0.4",
+    "cross-env": "^7.0.2",
+    "lint-staged": "^10.1.3",
+    "mockjs": "^1.1.0",
+    "postcss-px-to-viewport": "^1.1.1",
+    "prettier": "^2.0.4",
+    "yorkie": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=10.16.0"
+  }
+}
